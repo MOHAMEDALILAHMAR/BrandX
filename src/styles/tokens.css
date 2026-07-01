@@ -1,0 +1,66 @@
+/* ================================================================
+   BRANDX — Design Tokens
+   Single source of truth for all colors, type, spacing, animation.
+   Import this before any other stylesheet.
+   ================================================================ */
+
+:root {
+  /* ── Colors ─────────────────────────────────────────────────── */
+  --clr-bg:            #000000;
+  --clr-purple-900:    #080312;
+  --clr-purple-800:    #120828;
+  --clr-purple-700:    #1A0D30;
+  --clr-purple-600:    #21103A;
+  --clr-primary:       #5A2F88;
+  --clr-primary-mid:   #7C3AED;
+  --clr-primary-light: #A855F7;
+  --clr-primary-pale:  #C084FC;
+  --clr-features-card: #4A2472;
+  --clr-surface-sm:    rgba(217, 217, 217, 0.07);
+  --clr-surface-md:    rgba(217, 217, 217, 0.12);
+  --clr-surface-glass: rgba(217, 217, 217, 0.08);
+  --clr-text:          #ffffff;
+  --clr-text-muted:    rgba(255, 255, 255, 0.72);
+  --clr-text-subtle:   rgba(255, 255, 255, 0.82);
+  --clr-text-faint:    rgba(255, 255, 255, 0.45);
+
+  /* ── Typography ─────────────────────────────────────────────── */
+  /* Figma node 8:12 — hero: Montserrat Regular 64px #FFFFFF */
+  --font-primary:      'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --fs-hero:           clamp(36px, 5vw, 64px);
+  --fs-h2:             clamp(28px, 3.5vw, 48px);
+  --fs-h3:             clamp(20px, 2.5vw, 32px);
+  --fs-body-lg:        clamp(16px, 1.8vw, 24px);
+  --fs-body:           clamp(14px, 1.5vw, 18px);
+  --fs-sm:             clamp(12px, 1.3vw, 14px);
+  --fw-regular:        400;
+  --fw-medium:         500;
+  --fw-semibold:       600;
+  --fw-bold:           700;
+  --fw-extrabold:      800;
+
+  /* ── Spacing ────────────────────────────────────────────────── */
+  --sp-xs:   8px;
+  --sp-sm:  16px;
+  --sp-md:  28px;
+  --sp-lg:  48px;
+  --sp-xl:  80px;
+  --sp-2xl: 100px;
+
+  /* ── Radius ─────────────────────────────────────────────────── */
+  --r-sm:    12px;
+  --r-md:    28px;
+  --r-lg:    40px;
+  --r-xl:    80px;
+  --r-hero:  0 0 80px 80px;
+  --r-pill:  40px;
+  --r-full:  9999px;
+
+  /* ── Animation ──────────────────────────────────────────────── */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:   250ms;
+  --dur-base:   400ms;
+  --dur-slow:   750ms;
+  --dur-slower: 850ms;
+  --stagger:    150ms;
+}

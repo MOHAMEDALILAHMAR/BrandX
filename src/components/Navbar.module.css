@@ -1,0 +1,134 @@
+/* ===== NAVBAR — Figma pill design ===== */
+
+/* Full-width sticky wrapper — transparent background */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 14px 0;
+  background: transparent;
+  transition: background 0.35s ease;
+}
+
+/* When scrolled: subtle dark background behind everything */
+.headerScrolled {
+  background: rgba(13, 6, 24, 0.55) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Inner flex row: logo ←  pill → */
+.inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  gap: 20px;
+}
+
+/* ── LOGO ── */
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  cursor: pointer;
+  letter-spacing: -0.5px;
+  user-select: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+.logo:hover { opacity: 0.85; }
+
+.logoX {
+  background: linear-gradient(135deg, #7C3AED, #A855F7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── PILL CONTAINER — Figma: rgba(83,83,83,0.27), filter blur(3.15px), border-radius 38px ── */
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(83, 83, 83, 0.27);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-radius: 38px;
+  padding: 6px 8px 6px 20px;
+  flex: 1;
+  max-width: 900px;
+}
+
+/* ── GOOEYNAV OVERRIDES ── */
+:global(.gooey-nav-container) {
+  flex: 1;
+  display: flex;
+}
+
+:global(.gooey-nav-container nav) {
+  width: 100%;
+}
+
+:global(.gooey-nav-container nav ul) {
+  gap: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+:global(.gooey-nav-container nav ul li a) {
+  padding: 8px 14px;
+  font-size: clamp(13px, 1.3vw, 20px);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+  border-radius: 24px;
+  transition: color 0.2s, background 0.2s;
+}
+
+:global(.gooey-nav-container nav ul li a:hover) {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+:global(.gooey-nav-container nav ul li.active) {
+  color: #ffffff !important;
+  background: rgba(124, 58, 237, 0.25) !important;
+  border-radius: 24px;
+}
+
+:global(.gooey-nav-container nav ul li.active a) {
+  color: #ffffff;
+}
+
+:global(.gooey-nav-container nav ul li.active::after) {
+  display: none;
+}
+
+:global(.gooey-nav-container .effect.filter) {
+  mix-blend-mode: screen;
+}
+
+:global(.gooey-nav-container .effect.filter::before) {
+  display: none;
+}
+
+/* ── ICON BUTTON (lang switcher) ── */
+.iconBtn {
+  color: rgba(255, 255, 255, 0.6) !important;
+  background: transparent !important;
+  border: none !important;
+  flex-shrink: 0;
+}
+.iconBtn:hover { color: #ffffff !important; background: rgba(255,255,255,0.1) !important; }
+
+/* ── MOBILE: hide pill nav ── */
+@media (max-width: 768px) {
+  .pill { display: none; }
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  .pill { display: none; }
+}
