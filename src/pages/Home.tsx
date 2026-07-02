@@ -10,7 +10,7 @@ import CurvedLoop from '../components/CurvedLoop';
 
 import brandLogoImg   from '../assests/Page Acceuil/IMG_0101 (1).png';
 import teamImg        from '../assests/Page Acceuil/WhatsApp Image 2026-05-15 at 15.25.36.png';
-import dashboardImg   from '../assests/page about us/WhatsApp Image 2026-05-18 at 00.28.27.jpeg';
+import dashboardImg   from '../assests/Page Acceuil/IMG_0098.png';
 import img_foodApp    from '../assests/page portfolio/21093dd7282d1a4b7c2055cb31c1ddfc.jpg';
 import img_headphones from '../assests/page portfolio/8c55dee4be090a920e57cd9edb3885e0.jpg';
 import img_jenny      from '../assests/page portfolio/58ae41761a09f68774d7308c6d6b2ce5.jpg';
