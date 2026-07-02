@@ -3,7 +3,7 @@ import { Container, Menu, ActionIcon } from '@mantine/core';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { IconWorld } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
-import logoImg from '../assests/logo finnale BrandX.png';
+import logoImg from '../assests/logo.png';
 import classes from './Navbar.module.css';
 
 export function Navbar() {

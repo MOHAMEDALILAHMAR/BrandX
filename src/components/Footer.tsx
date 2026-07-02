@@ -2,7 +2,7 @@ import { Container, Grid } from '@mantine/core';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import logoImg from '../assests/logo finale footer.jpeg';
+import logoImg from '../assests/logo.png';
 import classes from './Footer.module.css';
 
 const FB_ICON = (
