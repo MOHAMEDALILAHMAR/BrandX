@@ -331,7 +331,7 @@ export function Home() {
         >
           <FallingText
             text={`${t('home.cta_line1')} ${t('home.cta_line2')} ${t('home.cta_highlight')}`}
-            highlightWords={[t('home.cta_highlight')]}
+            highlightWords={['Vos', 'Idées']}
             highlightClass="highlighted"
             trigger="hover"
             backgroundColor="transparent"
