@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 const isProd = process.env.NODE_ENV === 'production';
 
 app.use(cors({ origin: isProd
-  ? ['https://brandx.onrender.com']
+  ? [process.env.CORS_ORIGIN || true]
   : ['http://localhost:5173', 'http://localhost:4173']
 }));
 app.use(express.json());
@@ -126,4 +126,8 @@ if (isProd) {
   });
 }
 
-app.listen(PORT, () => console.log(`Backend BrandX listening on http://localhost:${PORT}`));
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => console.log(`Backend BrandX listening on http://localhost:${PORT}`));
+}
+
+module.exports = app;
