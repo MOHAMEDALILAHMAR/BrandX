@@ -260,7 +260,7 @@ export function Home() {
       <div className={classes.marqueeWrap1}>
         <div className={classes.marqueeBar1}>
           <CurvedLoop
-            marqueeText="Design   ✦  Tableau de Bord   ✦  Branding     ✦    Identité Visuelle   ✦   Prototypage  ✦  Expériance Utilisateur  ✦  Design  ✦  Branding  ✦  Identité Visuelle  Prototypage"
+            marqueeText="Design   ✦  Tableau de Bord   ✦  Branding   ✦  Identité Visuelle   ✦  Prototypage   ✦  Expériance Utilisateur   ✦  Design   ✦  Branding   ✦  Identité Visuelle   ✦  Prototypage"
             speed={3}
             curveAmount={10}
             direction="right"
@@ -356,7 +356,7 @@ export function Home() {
       <div className={classes.marqueeWrap2}>
         <div className={classes.marqueeBar2}>
           <CurvedLoop
-            marqueeText="Design   ✦  Tableau de Bord   ✦  Branding     ✦    Identité Visuelle   ✦   Prototypage  ✦  Expériance Utilisateur  ✦  Design  ✦  Branding  ✦  Identité Visuelle  Prototypage"
+            marqueeText="Design   ✦  Tableau de Bord   ✦  Branding   ✦  Identité Visuelle   ✦  Prototypage   ✦  Expériance Utilisateur   ✦  Design   ✦  Branding   ✦  Identité Visuelle   ✦  Prototypage"
             speed={3}
             curveAmount={10}
             direction="right"
