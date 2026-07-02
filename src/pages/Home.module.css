@@ -193,77 +193,86 @@
   letter-spacing: -1px;
 }
 
-.aboutImgRow {
+.aboutGrid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 24px;
+  gap: 32px;
   align-items: stretch;
-  margin-bottom: 48px;
 }
-@media (max-width: 768px) { .aboutImgRow { grid-template-columns: 1fr; } }
 
-.aboutImgLeft {
+@media (max-width: 860px) {
+  .aboutGrid { grid-template-columns: 1fr; }
+}
+
+.aboutLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.aboutLandscapeImg {
   width: 100%;
-  height: 420px;
+  border-radius: 24px;
   object-fit: cover;
-  border-radius: var(--r-lg);
-  display: block;
+  aspect-ratio: 16 / 10;
   border: 1px solid rgba(124, 58, 237, 0.2);
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
 }
-.aboutImgRight {
+
+.aboutRight {
+  display: flex;
+}
+
+.aboutPortraitImg {
   width: 100%;
-  height: 520px;
+  height: 100%;
+  border-radius: 24px;
   object-fit: cover;
-  border-radius: var(--r-lg);
-  display: block;
+  min-height: 640px;
   border: 1px solid rgba(124, 58, 237, 0.22);
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(124, 58, 237, 0.12);
 }
-@media (max-width: 768px) {
-  .aboutImgLeft  { height: 240px; }
-  .aboutImgRight { height: 300px; }
-}
 
-.aboutMissionRow {
-  max-width: 55%;
-  padding-left: 4px;
+@media (max-width: 860px) {
+  .aboutPortraitImg { min-height: 320px; }
 }
-@media (max-width: 768px) { .aboutMissionRow { max-width: 100%; } }
 
 .aboutMissionTitle {
   font-size: var(--fs-h3) !important;
   font-weight: var(--fw-extrabold) !important;
   color: var(--clr-text) !important;
-  margin-bottom: 16px !important;
+  margin: 0 !important;
 }
+
 .aboutDesc {
   font-size: var(--fs-body-lg);
-  color: var(--clr-text-subtle);
+  color: #E5E7EB;
   line-height: 1.75;
-  margin-bottom: 32px;
+  margin: 0;
 }
-.btnDark {
-  background: var(--clr-purple-600);
+
+.aboutBtn {
+  background: #23153c;
   border: none;
-  border-radius: var(--r-pill);
-  color: var(--clr-text);
+  border-radius: 9999px;
+  color: #ffffff;
   font-size: clamp(14px, 1.4vw, 20px);
   font-weight: var(--fw-semibold);
   height: 52px;
   padding: 0 36px;
   cursor: pointer;
+  align-self: flex-start;
   transition: background var(--dur-fast),
               transform var(--dur-fast) var(--ease-out),
               box-shadow var(--dur-fast);
   font-family: var(--font-primary);
 }
-.btnDark:hover {
+.aboutBtn:hover {
   background: var(--clr-primary);
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(90, 47, 136, 0.5);
 }
-.btnDark:focus-visible {
+.aboutBtn:focus-visible {
   outline: 2px solid var(--clr-primary-light);
   outline-offset: 3px;
 }

@@ -195,7 +195,7 @@ export function Home() {
         </Container>
       </div>
 
-      {/* ══════════════════ 3. À PROPOS + MISSION ══════════════════ */}
+      {/* ══════════════════ 3. À PROPOS — two-column ══════════════════ */}
       <section className={classes.aboutSection}>
         <Container size="xl">
           <div ref={aboutRef.ref}
@@ -207,18 +207,20 @@ export function Home() {
           >
             <h2 className={classes.aboutSectionHeading}>{t('home.about_heading')}</h2>
 
-            <div className={classes.aboutImgRow}>
-              <img src={teamImg}      alt="BrandX — Équipe"     className={classes.aboutImgLeft} />
-              <img src={dashboardImg} alt="BrandX — Dashboard" className={classes.aboutImgRight} />
+            <div className={classes.aboutGrid}>
+              <div className={classes.aboutLeft}>
+                <img src={teamImg} alt="BrandX — Équipe" className={classes.aboutLandscapeImg} />
+                <h3 className={classes.aboutMissionTitle}>{t('home.mission_title')}</h3>
+                <p className={classes.aboutDesc}>{t('home.mission_desc')}</p>
+                <button className={classes.aboutBtn} onClick={() => navigate('/about')}>
+                  {t('home.mission_btn')}
+                </button>
+              </div>
+              <div className={classes.aboutRight}>
+                <img src={dashboardImg} alt="BrandX — Dashboard" className={classes.aboutPortraitImg} />
+              </div>
             </div>
 
-            <div className={classes.aboutMissionRow}>
-              <h3 className={classes.aboutMissionTitle}>{t('home.mission_title')}</h3>
-              <p className={classes.aboutDesc}>{t('home.mission_desc')}</p>
-              <button className={classes.btnDark} onClick={() => navigate('/about')}>
-                {t('home.mission_btn')}
-              </button>
-            </div>
           </div>
         </Container>
       </section>
