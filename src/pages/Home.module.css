@@ -735,9 +735,16 @@
 .contactStripLabel {
   font-size: clamp(28px, 4vw, 55px);
   font-weight: var(--fw-semibold);
-  color: #5A2F88;
   line-height: 1.1;
   font-family: var(--font-primary);
+}
+
+.contactWhite {
+  color: #ffffff;
+}
+
+.contactPurple {
+  color: #5A2F88;
 }
 
 .contactStripBtnWrap {

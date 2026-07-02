@@ -370,8 +370,11 @@ export function Home() {
       {/* ══════════════════ 10. CONTACT STRIP ══════════════════ */}
       <section className={classes.contactStrip}>
         <Container size="xl">
-          <div className={classes.contactStripRow}>
-            <span className={classes.contactStripLabel}>{t('home.contact_label')}</span>
+            <div className={classes.contactStripRow}>
+              <span className={classes.contactStripLabel}>
+                <span className={classes.contactWhite}>Contactez-</span>
+                <span className={classes.contactPurple}>nous</span>
+              </span>
             <div className={classes.contactStripBtnWrap}>
               <button className={classes.contactStripBtn} onClick={() => navigate('/contact')}>
                 {t('home.contact_btn')}
