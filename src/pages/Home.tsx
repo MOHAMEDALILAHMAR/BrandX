@@ -19,20 +19,20 @@ import classes from './Home.module.css';
 
 const FEATURE_ICONS = [IconStar, IconHeadphones, IconCheck, IconMedal];
 
-interface Skill { text: string; type: 'ghost' | 'filled'; rotate: number; pad: string; mt: number; ml: number }
+interface Skill { text: string; type: 'ghost' | 'filled'; rotate: number; pad: string; left: number; bottom: number }
 const SKILLS: Skill[] = [
-  { text: 'Design Web',             type: 'ghost',  rotate: 12,  pad: '12px 20px', mt: 8,   ml: 0  },
-  { text: 'Prototype',              type: 'filled', rotate: 15,  pad: '12px 28px', mt: -24, ml: 0  },
-  { text: 'Illustration',           type: 'filled', rotate: -18, pad: '12px 28px', mt: 32,  ml: 0  },
-  { text: 'Tableau de Bord',        type: 'filled', rotate: -15, pad: '12px 20px', mt: -8,  ml: 0  },
-  { text: 'Design Produit',         type: 'ghost',  rotate: -8,  pad: '12px 20px', mt: 0,   ml: 16 },
-  { text: 'Identité visuelle',      type: 'ghost',  rotate: -12, pad: '12px 20px', mt: 16,  ml: 0  },
-  { text: 'Identité de Marque',     type: 'filled', rotate: 8,   pad: '12px 20px', mt: 0,   ml: -16},
-  { text: "Design d'app Mobile",    type: 'filled', rotate: 18,  pad: '12px 16px', mt: 0,   ml: 8  },
-  { text: 'Maquette',               type: 'ghost',  rotate: 6,   pad: '12px 24px', mt: -16, ml: 0  },
-  { text: 'Identité visuelle',      type: 'filled', rotate: -4,  pad: '12px 20px', mt: 0,   ml: 8  },
-  { text: 'UX/UI Design',           type: 'ghost',  rotate: 0,   pad: '12px 24px', mt: 8,   ml: 0  },
-  { text: "Page d'atterrissage",    type: 'ghost',  rotate: 0,   pad: '12px 20px', mt: 0,   ml: 0  },
+  { text: 'Design Web',             type: 'ghost',  rotate: 12,  pad: '12px 20px', left: 2,   bottom: 20  },
+  { text: 'Prototype',              type: 'filled', rotate: -24, pad: '12px 28px', left: 10,  bottom: 60  },
+  { text: 'Illustration',           type: 'filled', rotate: 18,  pad: '12px 28px', left: 18,  bottom: 35  },
+  { text: 'Tableau de Bord',        type: 'filled', rotate: -15, pad: '12px 20px', left: 27,  bottom: 70  },
+  { text: 'Design Produit',         type: 'ghost',  rotate: -8,  pad: '12px 20px', left: 36,  bottom: 25  },
+  { text: 'Identité visuelle',      type: 'ghost',  rotate: -18, pad: '12px 20px', left: 44,  bottom: 55  },
+  { text: 'Identité de Marque',     type: 'filled', rotate: 8,   pad: '12px 20px', left: 53,  bottom: 15  },
+  { text: "Design d'app Mobile",    type: 'filled', rotate: 22,  pad: '12px 16px', left: 61,  bottom: 50  },
+  { text: 'Maquette',               type: 'ghost',  rotate: 6,   pad: '12px 24px', left: 70,  bottom: 30  },
+  { text: 'Identité visuelle',      type: 'filled', rotate: -4,  pad: '12px 20px', left: 78,  bottom: 65  },
+  { text: 'UX/UI Design',           type: 'ghost',  rotate: 0,   pad: '12px 24px', left: 86,  bottom: 40  },
+  { text: "Page d'atterrissage",    type: 'ghost',  rotate: 20,  pad: '12px 20px', left: 93,  bottom: 10  },
 ];
 
 export function Home() {
@@ -338,6 +338,10 @@ export function Home() {
               key={skill.text}
               className={`${classes.skillPill} ${skill.type === 'filled' ? classes.skillFilled : classes.skillGhost} ${ctaRef.inView ? classes.pillDropIn : ''}`}
               style={{
+                left: `${skill.left}%`,
+                bottom: `${skill.bottom}px`,
+                padding: skill.pad,
+                transform: `translateY(${ctaRef.inView ? '0' : '-30px'}) rotate(${skill.rotate}deg)`,
                 transitionDelay: `${0.08 + i * 0.06}s`,
               }}
             >

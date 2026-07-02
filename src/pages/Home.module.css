@@ -602,29 +602,22 @@
 }
 
 .ctaPillsLayer {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 16px 12px;
+  position: relative;
+  height: 260px;
   width: 100%;
-  max-width: 1100px;
-  margin: 60px auto 0;
+  max-width: 1200px;
+  margin: 40px auto 0;
 }
 
 @media (max-width: 820px) {
   .ctaPillsLayer {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px 8px;
-    margin-top: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .ctaPillsLayer {
-    grid-template-columns: repeat(2, 1fr);
+    height: 160px;
+    margin-top: 24px;
   }
 }
 
 .skillPill {
+  position: absolute;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -638,21 +631,18 @@
   backdrop-filter: blur(150px);
   user-select: none;
   opacity: 0;
-  transform: translateY(-30px);
   transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
   will-change: transform, opacity;
 }
 .pillDropIn {
   opacity: 1;
-  transform: translateY(0);
 }
 
 @media (max-width: 820px) {
   .skillPill {
-    height: 38px;
-    font-size: 12px;
-    border-radius: 9999px;
-    padding: 0 10px !important;
+    height: 34px;
+    font-size: 11px;
+    padding: 0 8px !important;
   }
 }
 
