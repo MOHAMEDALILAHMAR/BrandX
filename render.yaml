@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: brandx
+    env: node
+    buildCommand: npm install && cd backend && npm install && cd .. && npm run build
+    startCommand: node backend/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BREVO_SMTP_HOST
+        sync: false
+      - key: BREVO_SMTP_PORT
+        value: "587"
+      - key: BREVO_SMTP_USER
+        sync: false
+      - key: BREVO_SMTP_PASS
+        sync: false

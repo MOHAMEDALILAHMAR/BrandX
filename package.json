@@ -8,6 +8,7 @@
     "dev:front": "vite",
     "dev:back": "node backend/server.js",
     "build": "tsc -b && vite build",
+    "start": "node backend/server.js",
     "preview": "vite preview",
     "lint": "eslint .",
     "type-check": "tsc --noEmit"

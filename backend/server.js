@@ -1,13 +1,24 @@
 require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 const express    = require('express');
+const path       = require('path');
 const cors       = require('cors');
 const nodemailer = require('nodemailer');
 
 const app  = express();
 const PORT = process.env.PORT || 3001;
+const isProd = process.env.NODE_ENV === 'production';
 
-app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:4173'] }));
+app.use(cors({ origin: isProd
+  ? ['https://brandx.onrender.com']
+  : ['http://localhost:5173', 'http://localhost:4173']
+}));
 app.use(express.json());
+
+// Serve built frontend in production
+if (isProd) {
+  const distPath = path.join(__dirname, '..', 'dist');
+  app.use(express.static(distPath));
+}
 
 const transporter = nodemailer.createTransport({
   host:   process.env.BREVO_SMTP_HOST,
@@ -27,7 +38,7 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-app.post('/contact', async (req, res) => {
+app.post('/api/contact', async (req, res) => {
   const { firstName, lastName, email, phone, subject, message } = req.body;
 
   if (!firstName || !lastName || !email || !message) {
@@ -75,7 +86,7 @@ app.post('/contact', async (req, res) => {
   }
 });
 
-app.post('/newsletter', async (req, res) => {
+app.post('/api/newsletter', async (req, res) => {
   const { email } = req.body;
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ success: false, message: 'Email invalide.' });
@@ -107,5 +118,12 @@ app.post('/newsletter', async (req, res) => {
     return res.status(500).json({ success: false, message: "Échec de l'inscription. Réessayez." });
   }
 });
+
+// SPA fallback — serve index.html for all non-API routes
+if (isProd) {
+  app.get('*', (_req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
+  });
+}
 
 app.listen(PORT, () => console.log(`Backend BrandX listening on http://localhost:${PORT}`));
