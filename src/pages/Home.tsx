@@ -112,7 +112,7 @@ export function Home() {
   const nextProj = () => { setActiveProj((p) => (p + 1) % PROJECTS.length); };
 
   return (
-    <div>
+    <div className={classes.homeRoot}>
 
       {/* ══════════════════ 1. HERO — photo bg + interactive shader canvas ══════════════════ */}
       <section

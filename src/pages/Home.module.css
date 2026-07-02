@@ -779,9 +779,13 @@
 }
 .contactStripCircle:hover { background: #111111; transform: translateX(4px); }
 
-/* ═══════════════════════════════════════════════════
-   ACCESSIBILITY — prefers-reduced-motion
-   ═══════════════════════════════════════════════════ */
+/* ── Section spacing ── */
+.homeRoot > * {
+  margin-bottom: 80px;
+}
+.homeRoot > *:last-child {
+  margin-bottom: 0;
+}
 @media (prefers-reduced-motion: reduce) {
   .featureItem  { opacity: 1; transform: none; transition: none; }
   .featureIn    { opacity: 1; transform: none; }
