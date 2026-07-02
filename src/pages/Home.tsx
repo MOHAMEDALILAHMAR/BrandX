@@ -308,7 +308,7 @@ export function Home() {
         </Container>
       </section>
 
-      {/* ══════════════════ 7. CTA HEADING ══════════════════ */}
+      {/* ══════════════════ 7. CTA HEADING + SKILL PILLS ══════════════════ */}
       <section className={classes.ctaSection}>
         <div
           ref={ctaRef.ref}
@@ -331,20 +331,13 @@ export function Home() {
             mouseConstraintStiffness={0.9}
           />
         </div>
-      </section>
 
-      {/* ══════════════════ 8. SKILL PILLS ══════════════════ */}
-      <section className={classes.pillsSection}>
         <div className={classes.ctaPillsLayer}>
           {SKILLS.map((skill, i) => (
             <span
               key={skill.text}
               className={`${classes.skillPill} ${skill.type === 'filled' ? classes.skillFilled : classes.skillGhost} ${ctaRef.inView ? classes.pillDropIn : ''}`}
               style={{
-                rotate: `${skill.rotate}deg`,
-                padding: skill.pad,
-                marginTop: skill.mt,
-                marginLeft: skill.ml,
                 transitionDelay: `${0.08 + i * 0.06}s`,
               }}
             >
