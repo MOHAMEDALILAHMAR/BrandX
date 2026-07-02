@@ -369,7 +369,7 @@
   left: -5%;
   height: 68px;
   top: 20px;
-  background: var(--clr-primary);
+  background: #5A2F88;
   transform: rotate(-1.96deg);
   overflow: hidden;
   display: flex;
@@ -390,7 +390,7 @@
 .marqueeBar2 {
   width: 100%;
   height: 60px;
-  background: #6B42C8;
+  background: #5A2F88;
   overflow: hidden;
   display: flex;
   align-items: center;
