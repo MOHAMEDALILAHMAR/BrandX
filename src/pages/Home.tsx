@@ -205,7 +205,10 @@ export function Home() {
               transition: 'opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s',
             }}
           >
-            <h2 className={classes.aboutSectionHeading}>{t('home.about_heading')}</h2>
+            <h2 className={classes.aboutSectionHeading}>
+              <span className={classes.txtWhite}>À propos de </span>
+              <span className={classes.txtPurple}>Nous</span>
+            </h2>
 
             <div className={classes.aboutGrid}>
               <div className={classes.aboutLeft}>
@@ -229,7 +232,10 @@ export function Home() {
       <section className={classes.servicesSection}>
         <Container size="xl">
           <div ref={svcRef.ref} style={{ textAlign: 'center' }}>
-            <div className={classes.servicesPill}>{t('home.services_pill')}</div>
+            <div className={classes.servicesPill}>
+              <span className={classes.txtWhite}>Nos </span>
+              <span className={classes.txtPurple}>Services</span>
+            </div>
             <div className={classes.servicesStack}>
               {SERVICES.map((svc, i) => (
                 <div

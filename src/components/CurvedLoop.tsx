@@ -115,15 +115,13 @@ const CurvedLoop = ({
     >
       <div className="curved-loop-track" ref={trackRef} style={{ transform: `translateX(${offset}px)` }}>
         <span className={`curved-loop-text ${className || ''}`}>
-          {Array(repeats).fill(null).map((_, idx) => (
-            <span key={idx}>
-              {parts.map((p, i) =>
-                p.type === 'text'
-                  ? <span key={`t${i}`}>{p.value}</span>
-                  : <img key={`i${i}`} src={p.value} alt="" className="curved-loop-img" />
-              )}
-            </span>
-          ))}
+          {Array(repeats).fill(null).flatMap((_, idx) =>
+            parts.map((p, i) =>
+              p.type === 'text'
+                ? <span key={`${idx}t${i}`}>{p.value}</span>
+                : <img key={`${idx}i${i}`} src={p.value} alt="" className="curved-loop-img" />
+            )
+          )}
         </span>
       </div>
     </div>

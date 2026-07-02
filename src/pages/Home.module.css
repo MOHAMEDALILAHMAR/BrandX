@@ -1,5 +1,9 @@
 /* ===== HOME PAGE — Figma match ===== */
 
+/* ── Reusable two-tone helpers ── */
+.txtWhite  { color: #ffffff; }
+.txtPurple { color: #5A2F88; }
+
 /* ═══════════════════════════════════════════════════
    1. HERO — full photo background
    ═══════════════════════════════════════════════════ */
