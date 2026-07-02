@@ -18,4 +18,14 @@
   color: #ffffff;
   text-transform: uppercase;
   user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.curved-loop-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  vertical-align: middle;
 }

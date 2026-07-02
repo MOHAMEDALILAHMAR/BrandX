@@ -213,7 +213,7 @@
 }
 .aboutImgRight {
   width: 100%;
-  height: 420px;
+  height: 520px;
   object-fit: cover;
   border-radius: var(--r-lg);
   display: block;
@@ -222,7 +222,7 @@
 }
 @media (max-width: 768px) {
   .aboutImgLeft  { height: 240px; }
-  .aboutImgRight { height: 240px; }
+  .aboutImgRight { height: 300px; }
 }
 
 .aboutMissionRow {

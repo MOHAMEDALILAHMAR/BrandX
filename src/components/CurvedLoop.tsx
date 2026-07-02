@@ -8,6 +8,7 @@ interface CurvedLoopProps {
   curveAmount?: number;
   direction?: 'left' | 'right';
   interactive?: boolean;
+  imgSrc?: string;
 }
 
 const CurvedLoop = ({
@@ -15,12 +16,26 @@ const CurvedLoop = ({
   speed = 2,
   className,
   direction = 'left',
-  interactive = true
+  interactive = true,
+  imgSrc,
 }: CurvedLoopProps) => {
+  const parts = useMemo(() => {
+    const segments = marqueeText.split('✦').filter(Boolean).map(s => s.trim());
+    const result: { type: 'text' | 'img'; value: string }[] = [];
+    segments.forEach((seg, i) => {
+      result.push({ type: 'text', value: seg });
+      if (imgSrc && i < segments.length - 1) {
+        result.push({ type: 'img', value: imgSrc });
+      }
+    });
+    return result;
+  }, [marqueeText, imgSrc]);
+
   const text = useMemo(() => {
-    const hasTrailing = /\s|\u00A0$/.test(marqueeText);
-    return (hasTrailing ? marqueeText.replace(/\s+$/, '') : marqueeText) + '\u00A0';
-  }, [marqueeText]);
+    const raw = parts.map(p => p.type === 'text' ? p.value : ' ').join('  ');
+    const hasTrailing = /\s|\u00A0$/.test(raw);
+    return (hasTrailing ? raw.replace(/\s+$/, '') : raw) + '\u00A0';
+  }, [parts]);
 
   const trackRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
@@ -99,7 +114,17 @@ const CurvedLoop = ({
       onPointerLeave={endDrag}
     >
       <div className="curved-loop-track" ref={trackRef} style={{ transform: `translateX(${offset}px)` }}>
-        <span className={`curved-loop-text ${className || ''}`}>{totalText}</span>
+        <span className={`curved-loop-text ${className || ''}`}>
+          {Array(repeats).fill(null).map((_, idx) => (
+            <span key={idx}>
+              {parts.map((p, i) =>
+                p.type === 'text'
+                  ? <span key={`t${i}`}>{p.value}</span>
+                  : <img key={`i${i}`} src={p.value} alt="" className="curved-loop-img" />
+              )}
+            </span>
+          ))}
+        </span>
       </div>
     </div>
   );
