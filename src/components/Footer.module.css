@@ -22,20 +22,13 @@
 }
 
 /* Brand column */
-.brandTitle {
-  font-size: 22px;
-  font-weight: 800;
-  color: #ffffff;
+.brandLogo {
   margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 2px;
+  line-height: 0;
 }
-.brandX {
-  background: linear-gradient(135deg,#7C3AED,#A855F7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.brandLogoImg {
+  height: 38px;
+  width: auto;
 }
 
 .brandDesc {

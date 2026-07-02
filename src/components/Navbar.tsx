@@ -3,6 +3,7 @@ import { Container, Menu, ActionIcon } from '@mantine/core';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { IconWorld } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
+import logoImg from '../assests/logo finnale BrandX.png';
 import classes from './Navbar.module.css';
 
 export function Navbar() {
@@ -30,7 +31,7 @@ export function Navbar() {
       <Container size="xl" className={classes.inner}>
 
         <div className={classes.logo} onClick={() => navigate('/')}>
-          Brand<span className={classes.logoX}>X</span>
+          <img src={logoImg} alt="BrandX" className={classes.logoImg} />
         </div>
 
         <div className={classes.pill}>

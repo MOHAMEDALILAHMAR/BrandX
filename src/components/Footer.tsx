@@ -2,6 +2,7 @@ import { Container, Grid } from '@mantine/core';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import logoImg from '../assests/logo finnale BrandX.png';
 import classes from './Footer.module.css';
 
 const FB_ICON = (
@@ -51,8 +52,8 @@ export function FooterComponent() {
           <Grid gutter={40}>
             {/* Brand */}
             <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
-              <div className={classes.brandTitle}>
-                Brand<span className={classes.brandX}>X</span>
+              <div className={classes.brandLogo}>
+                <img src={logoImg} alt="BrandX" className={classes.brandLogoImg} />
               </div>
               <p className={classes.brandDesc}>{t('footer.brand_desc')}</p>
               <div className={classes.socialRow}>
