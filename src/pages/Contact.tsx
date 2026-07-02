@@ -119,6 +119,8 @@ export function Contact() {
             className={`fadeUp ${contentRef.inView ? 'visible' : ''}`}
           >
 
+            <form onSubmit={handleSubmit} noValidate className={classes.form}>
+
             <div className={classes.formHeader}>
               <span className={classes.formTag}>{t('contactPage.form_tagline')}</span>
               <h2 className={classes.formTitle}>
@@ -137,8 +139,6 @@ export function Contact() {
               {apiError && (
                 <div className={classes.errorMsg}>✗ {apiError}</div>
               )}
-
-              <form onSubmit={handleSubmit} noValidate className={classes.form}>
 
                 <div className={classes.fieldRow}>
                   <div className={classes.field}>
@@ -210,10 +210,6 @@ export function Contact() {
                   {errors.message && <span className={classes.err}>{errors.message}</span>}
                 </div>
 
-                <button type="submit" className={classes.submitBtn} disabled={sending}>
-                  {sending ? '...' : t('contactPage.send')}
-                </button>
-              </form>
             </div>
 
             {/* ── INFO SIDEBAR ── */}
@@ -251,6 +247,12 @@ export function Contact() {
             </div>
 
             </div>{/* /.layout */}
+
+                <button type="submit" className={classes.submitBtn} disabled={sending}>
+                  {sending ? '...' : t('contactPage.send')}
+                </button>
+
+            </form>
           </div>
         </Container>
       </section>

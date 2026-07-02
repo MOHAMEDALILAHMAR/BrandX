@@ -76,7 +76,7 @@
 .breadcrumb span { color: #A855F7; }
 
 /* ─── FORM HEADER ─── */
-.formHeader { margin-bottom: 60px; }
+.formHeader { margin-bottom: 0; }
 
 .formTag {
   display: inline-block;
@@ -138,7 +138,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 44px;
 }
 
 .fieldRow {
