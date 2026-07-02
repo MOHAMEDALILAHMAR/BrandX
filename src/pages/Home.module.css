@@ -800,7 +800,7 @@
 .contactStripCircle:hover { background: #111111; transform: translateX(4px); }
 
 /* ── Section spacing ── */
-.homeRoot > * {
+.homeRoot > *:not(:first-child) {
   margin-bottom: 80px;
 }
 .homeRoot > *:last-child {
