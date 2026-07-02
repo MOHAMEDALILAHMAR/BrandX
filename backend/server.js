@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 const isProd = process.env.NODE_ENV === 'production';
 
 app.use(cors({ origin: isProd
-  ? [process.env.CORS_ORIGIN || true]
+  ? (process.env.CORS_ORIGIN || true)
   : ['http://localhost:5173', 'http://localhost:4173']
 }));
 app.use(express.json());
