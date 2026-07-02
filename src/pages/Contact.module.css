@@ -76,7 +76,7 @@
 .breadcrumb span { color: #A855F7; }
 
 /* ─── FORM HEADER ─── */
-.formHeader { margin-bottom: 44px; }
+.formHeader { margin-bottom: 60px; }
 
 .formTag {
   display: inline-block;
@@ -133,7 +133,6 @@
   .infoSide { margin-top: 0; }
 }
 
-.formHeader { margin-bottom: 44px; }
 
 /* Form */
 .form {

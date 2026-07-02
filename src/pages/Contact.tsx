@@ -116,18 +116,20 @@ export function Contact() {
         <Container size="xl">
           <div
             ref={contentRef.ref}
-            className={`${classes.layout} fadeUp ${contentRef.inView ? 'visible' : ''}`}
+            className={`fadeUp ${contentRef.inView ? 'visible' : ''}`}
           >
+
+            <div className={classes.formHeader}>
+              <span className={classes.formTag}>{t('contactPage.form_tagline')}</span>
+              <h2 className={classes.formTitle}>
+                {t('contactPage.form_title_line1')}<br />{t('contactPage.form_title_line2')}
+              </h2>
+            </div>
+
+            <div className={classes.layout}>
 
             {/* ── FORM ── */}
             <div className={classes.formSide}>
-
-              <div className={classes.formHeader}>
-                <span className={classes.formTag}>{t('contactPage.form_tagline')}</span>
-                <h2 className={classes.formTitle}>
-                  {t('contactPage.form_title_line1')}<br />{t('contactPage.form_title_line2')}
-                </h2>
-              </div>
 
               {submitted && (
                 <div className={classes.successMsg}>{t('contactPage.success')}</div>
@@ -248,6 +250,7 @@ export function Contact() {
               </div>
             </div>
 
+            </div>{/* /.layout */}
           </div>
         </Container>
       </section>
