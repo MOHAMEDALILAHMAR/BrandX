@@ -801,7 +801,7 @@
 
 /* ── Section spacing ── */
 .homeRoot > *:not(:first-child) {
-  margin-bottom: 45px;
+  margin-bottom: 60px;
 }
 .homeRoot > *:last-child {
   margin-bottom: 0;
