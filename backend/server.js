@@ -71,8 +71,8 @@ app.post('/api/contact', async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from:    '"BrandX Contact" <dalilahmer1212@gmail.com>',
-      to:      'Tamazertywiem@gmail.com, dalilahmer1212@gmail.com',
+      from:    '"BrandX Contact" <Tamazertywiem@gmail.com>',
+      to:      ['Tamazertywiem@gmail.com', 'dalilahmer1212@gmail.com'],
       replyTo: email,
       subject: `Nouveau contact BrandX${subject ? ' : ' + subject : ''} — ${nom}`,
       text,
@@ -105,8 +105,8 @@ app.post('/api/newsletter', async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from:    '"BrandX Newsletter" <dalilahmer1212@gmail.com>',
-      to:      'Tamazertywiem@gmail.com, dalilahmer1212@gmail.com',
+      from:    '"BrandX Newsletter" <Tamazertywiem@gmail.com>',
+      to:      ['Tamazertywiem@gmail.com', 'dalilahmer1212@gmail.com'],
       subject: `Nouvel abonné Newsletter BrandX — ${email}`,
       text:    `Nouvel abonné newsletter BrandX\nEmail: ${email}\nReçu le: ${now}`,
       html,
